@@ -9,17 +9,6 @@ class ATM:
         typed_pin = input('Please insert your pin code: ')
         return typed_pin
 
-    def pin_authentication(self):
-        while self.count < 3:
-            typed_pin = self.get_pin()
-            if typed_pin != self.PIN:
-                self.count += 1
-                print("incorrect password")
-            else:
-                self.withdraw_cash()
-                break
-
-
     def withdraw_cash(self):
         print(f"Your current balance: {self.ACCOUNT_BALANCE}")
         withdraw_amount = int(input('Please insert the amount you want to withdraw: '))
@@ -31,14 +20,20 @@ class ATM:
         else:
             print(f"withdrew {withdraw_amount} successfully. Your remaining balance is {self.ACCOUNT_BALANCE}")
 
+    def pin_authentication_and_withdraw(self):
+        while self.count < 3:
+            typed_pin = self.get_pin()
+            if typed_pin != self.PIN:
+                self.count += 1
+                print("incorrect password")
+            else:
+                self.withdraw_cash()
+                break
 
-atm = ATM()
-atm.pin_authentication()
 
-
-
-
-
+"""PLEASE ACTIVATE THE CODE TO RUN THE atm.py"""
+# atm=ATM()
+# atm.pin_authentication_and_withdraw()
 
 
 
