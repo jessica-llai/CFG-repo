@@ -1,0 +1,42 @@
+# https://www.hackerrank.com/challenges/itertools-product/problem?isFullScreen=true
+
+You are given a two lists  and . Your task is to compute their cartesian product X.
+
+Example
+
+A = [1, 2]
+B = [3, 4]
+
+AxB = [(1, 3), (1, 4), (2, 3), (2, 4)]
+Note: A and B are sorted lists, and the cartesian product's tuples should be output in sorted order.
+
+Input Format
+
+The first line contains the space separated elements of list .
+The second line contains the space separated elements of list .
+
+Both lists have no duplicate integer elements.
+
+Constraints
+
+
+
+Output Format
+
+Output the space separated tuples of the cartesian product.
+
+```
+
+from itertools import product 
+import sys
+
+s = [i.strip().split() for i in sys.stdin.readlines()]
+s1 = [int(e) for e in s[0]]
+s2 = [int(m) for m in s[1]]
+
+for i in product(s1,s2):
+    print(i, end=' ')
+    
+
+
+```
